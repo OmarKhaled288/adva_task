@@ -1,0 +1,107 @@
+import polars as pl
+
+schema = {
+    "ID": pl.String,
+    "Customer_ID": pl.String,
+    "Month": pl.String,
+    "Name": pl.String,
+    "Age": pl.Int64,
+    "SSN": pl.String,
+    "Occupation": pl.String,
+    "Annual_Income": pl.Float64,
+    "Monthly_Inhand_Salary": pl.Float64,
+    "Num_Bank_Accounts": pl.Int64,
+    "Num_Credit_Card": pl.Int64,
+    "Interest_Rate": pl.Float64,
+    "Num_of_Loan": pl.Int64,
+    "Type_of_Loan": pl.String,
+    "Delay_from_due_date": pl.Int64,
+    "Num_of_Delayed_Payment": pl.Int64,
+    "Changed_Credit_Limit": pl.Float64,
+    "Num_Credit_Inquiries": pl.Int64,
+    "Credit_Mix": pl.String,
+    "Outstanding_Debt": pl.Float64,
+    "Credit_Utilization_Ratio": pl.Float64,
+    "Credit_History_Age": pl.String,
+    "Payment_of_Min_Amount": pl.String,
+    "Total_EMI_per_month": pl.Float64,
+    "Amount_invested_monthly": pl.Float64,
+    "Payment_Behaviour": pl.String,
+    "Monthly_Balance": pl.Float64,
+    "Credit_Score": pl.String,
+}
+
+one_row_schema = {
+    "Name": pl.String,
+    "SSN": pl.String,
+    "Month": pl.String,
+    "Age": pl.Float64,
+    "Occupation": pl.String,
+    "Annual_Income": pl.Float64,
+    "Monthly_Inhand_Salary": pl.Float64,
+    "Num_Bank_Accounts": pl.Float64,
+    "Num_Credit_Card": pl.Float64,
+    "Interest_Rate": pl.Float64,
+    "Num_of_Loan": pl.Float64,
+    "Type_of_Loan": pl.String,
+    "Delay_from_due_date": pl.Float64,
+    "Num_of_Delayed_Payment": pl.Float64,
+    "Changed_Credit_Limit": pl.Float64,
+    "Num_Credit_Inquiries": pl.Float64,
+    "Credit_Mix": pl.String,
+    "Outstanding_Debt": pl.Float64,
+    "Credit_Utilization_Ratio": pl.Float64,
+    "Credit_History_Age": pl.String,
+    "Payment_of_Min_Amount": pl.String,
+    "Total_EMI_per_month": pl.Float64,
+    "Amount_invested_monthly": pl.Float64,
+    "Payment_Behaviour": pl.String,
+    "Monthly_Balance": pl.Float64
+}
+
+num_columns = [
+    'Age',
+    'Annual_Income',
+    'Monthly_Inhand_Salary',
+    'Num_Bank_Accounts',
+    'Num_Credit_Card',
+    'Interest_Rate',
+    'Num_of_Loan',
+    'Delay_from_due_date',
+    'Num_of_Delayed_Payment',
+    'Changed_Credit_Limit',
+    'Outstanding_Debt',
+    'Credit_Utilization_Ratio',
+    'Total_EMI_per_month',
+    'Amount_invested_monthly',
+    'Monthly_Balance',
+    "Credit_History_Age"
+]
+
+categorical_features = [
+    'Month', 
+    'Occupation', 
+    'Credit_Mix', 
+    'Payment_of_Min_Amount', 
+    'Payment_Behaviour'
+]
+
+natural_number_columns = [
+    'Age',
+    'Num_Bank_Accounts',
+    'Num_Credit_Card',
+    'Num_of_Loan',
+    'Num_of_Delayed_Payment',
+]
+
+missing_columns = [
+    'Home Equity Loan', 
+    'Student Loan', 
+    'Auto Loan', 
+    'Mortgage Loan', 
+    'Personal Loan', 
+    'Debt Consolidation Loan', 
+    'Payday Loan', 
+    'Not Specified', 
+    'Credit-Builder Loan'
+]
