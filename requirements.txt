@@ -6,3 +6,4 @@ pyarrow==20.0.0
 scikit-learn==1.7.0
 streamlit==1.45.1
 catboost==1.2.8
+nbformat==5.10.4
