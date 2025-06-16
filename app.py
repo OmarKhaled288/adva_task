@@ -12,7 +12,7 @@ tab1, tab2 = st.tabs(["Upload", "Manual"])
 
 # Load the model
 model = joblib.load("cat_model.joblib")
-le = joblib.load("label_encoder.pkl")
+le = joblib.load("label_encoder.joblib")
 
 with tab1:
     upload.run(model, le)
