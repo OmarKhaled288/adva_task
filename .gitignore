@@ -1,4 +1,5 @@
 __pycashe__
+.venv
 *.ipynb
 *.csv
 *.pkl
