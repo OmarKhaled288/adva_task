@@ -19,4 +19,3 @@ with tab1:
 
 with tab2:
     manual.run(model, le)
-

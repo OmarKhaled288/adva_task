@@ -28,7 +28,6 @@ schema = {
     "Amount_invested_monthly": pl.Float64,
     "Payment_Behaviour": pl.String,
     "Monthly_Balance": pl.Float64,
-    "Credit_Score": pl.String,
 }
 
 one_row_schema = {
@@ -94,14 +93,35 @@ natural_number_columns = [
     'Num_of_Delayed_Payment',
 ]
 
-missing_columns = [
-    'Home Equity Loan', 
-    'Student Loan', 
-    'Auto Loan', 
-    'Mortgage Loan', 
-    'Personal Loan', 
-    'Debt Consolidation Loan', 
-    'Payday Loan', 
-    'Not Specified', 
-    'Credit-Builder Loan'
+model_features = [
+    'Month',
+    'Age',
+    'Occupation',
+    'Annual_Income',
+    'Monthly_Inhand_Salary',
+    'Num_Bank_Accounts',
+    'Num_Credit_Card',
+    'Interest_Rate',
+    'Num_of_Loan',
+    'Delay_from_due_date',
+    'Num_of_Delayed_Payment',
+    'Changed_Credit_Limit',
+    'Credit_Mix',
+    'Outstanding_Debt',
+    'Credit_Utilization_Ratio',
+    'Credit_History_Age',
+    'Payment_of_Min_Amount',
+    'Total_EMI_per_month',
+    'Amount_invested_monthly',
+    'Payment_Behaviour',
+    'Monthly_Balance',
+    'Debt Consolidation Loan',
+    'Payday Loan',
+    'Auto Loan',
+    'Home Equity Loan',
+    'Not Specified',
+    'Mortgage Loan',
+    'Credit-Builder Loan',
+    'Student Loan',
+    'Personal Loan'
 ]

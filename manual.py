@@ -77,34 +77,6 @@ def run(model, le):
         Credit_History_Age = st.text_input("Credit History Age")
 
 
-    # features = {
-    #     "Name": Name,
-    #     "SSN": SSN,
-    #     "Age": age,
-    #     "Annual_Income": annual_income,
-    #     "Monthly_Inhand_Salary": monthly_inhand_salary,
-    #     "Num_Bank_Accounts": num_bank_accounts,
-    #     "Num_Credit_Card": num_credit_card,
-    #     "Interest_Rate": interest_rate,
-    #     "Num_of_Loan": num_of_loan,
-    #     "Delay_from_due_date": delay_from_due_date,
-    #     "Num_of_Delayed_Payment": num_of_delayed_payment,
-    #     "Changed_Credit_Limit": changed_credit_limit,
-    #     "Num_Credit_Inquiries": num_credit_inquiries,
-    #     "Outstanding_Debt": outstanding_debt,
-    #     "Credit_Utilization_Ratio": credit_utilization_ratio,
-    #     "Total_EMI_per_month": total_emi_per_month,
-    #     "Amount_invested_monthly": amount_invested_monthly,
-    #     "Monthly_Balance": monthly_balance,
-    #     "Month": Month,
-    #     "Occupation": Occupation,
-    #     "Credit_Mix": Credit_Mix,
-    #     "Payment_of_Min_Amount": Payment_of_Min_Amount,
-    #     "Payment_Behaviour": Payment_Behaviour,
-    #     "Type_of_Loan": Type_of_Loan,
-    #     "Credit_History_Age": Credit_History_Age
-    # }
-
     features = {
     "Name": [Name],
     "SSN": [SSN],
@@ -129,7 +101,7 @@ def run(model, le):
     "Credit_Mix": [Credit_Mix],
     "Payment_of_Min_Amount": [Payment_of_Min_Amount],
     "Payment_Behaviour": [Payment_Behaviour],
-    "Type_of_Loan": [", ".join(Type_of_Loan)],  # Convert multiselect list to string
+    "Type_of_Loan": [", ".join(Type_of_Loan)],
     "Credit_History_Age": [Credit_History_Age]
 }
 

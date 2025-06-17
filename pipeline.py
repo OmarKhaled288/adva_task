@@ -1,5 +1,5 @@
 import polars as pl
-from objects import num_columns, natural_number_columns, schema, missing_columns
+from objects import num_columns, natural_number_columns, schema, model_features
 
 def df_preprocess_cat(df):
     df = (df
@@ -113,13 +113,16 @@ def preprocess_one_row(df):
     df_processed = df_preprocess_cat(df)
     df_processed = preprocess_group(df_processed)
     df_processed = encode_type_of_loan(df_processed)
-    for i in missing_columns:
+    for i in model_features:
         if i not in df_processed.columns:
             df_processed = df_processed.with_columns(pl.lit(0).alias(i))
-    return df_processed
+    return df_processed.to_pandas().fillna(0)
 
 def preprocess(df):
     df_processed = df_preprocess_cat(df)
     df_processed = df_processed.group_by("Customer_ID").map_groups(preprocess_group, schema=schema).collect()
     df_processed = encode_type_of_loan(df_processed)
-    return df_processed.drop(['Customer_ID', 'ID'])
+    for i in model_features:
+        if i not in df_processed.columns:
+            df_processed = df_processed.with_columns(pl.lit(0).alias(i))
+    return df_processed.drop(['Customer_ID', 'ID']).to_pandas().fillna(0)
